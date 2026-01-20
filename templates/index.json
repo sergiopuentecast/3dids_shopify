@@ -109,7 +109,7 @@
         "icons_style": "chevron",
         "icons_shape": "none",
         "slideshow_controls_style": "dots",
-        "autoplay": true,
+        "autoplay": false,
         "autoplay_speed": 4,
         "padding-block-start": 0,
         "padding-block-end": 0
@@ -382,28 +382,18 @@
             "border_radius": 0
           },
           "blocks": {
-            "collection_title_V7pntk": {
-              "type": "collection-title",
-              "name": "t:names.collection_title",
+            "button_Hej9EA": {
+              "type": "button",
+              "name": "t:names.button",
               "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": true,
-                "background_color": "#ffffff",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 4,
-                "padding-inline-start": 8,
-                "padding-inline-end": 8
+                "label": "{{ closest.collection.title }}",
+                "link": "{{ closest.collection.url }}",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
               },
               "blocks": {}
             },
@@ -427,16 +417,22 @@
             }
           },
           "block_order": [
-            "collection_title_V7pntk"
+            "button_Hej9EA"
           ]
         }
       },
       "block_order": [
         "text_zFNFA6"
       ],
+      "custom_css": [],
       "name": "t:names.collections_grid",
       "settings": {
-        "collection_list": [],
+        "collection_list": [
+          "barbie",
+          "disney",
+          "fisher-price",
+          "frontpage"
+        ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "columns": 8,
