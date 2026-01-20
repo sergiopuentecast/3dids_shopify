@@ -17,7 +17,20 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "ENVÍOS HASTA EN 48 HORAS DESDE SALIDA DE ALMACÉN",
+            "text": "<strong>ENVÍOS HASTA EN 48 HORAS DESDE SALIDA DE ALMACÉN</strong>",
+            "link": "",
+            "font": "var(--font-subheading--family)",
+            "font_size": "0.875rem",
+            "weight": "600",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "announcement_bxBw4H": {
+          "type": "_announcement",
+          "settings": {
+            "text": "<strong>GASTOS DE ENVÍO GRATIS A PARTIR DE 49.99€</strong>",
             "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "0.875rem",
@@ -29,7 +42,8 @@
         }
       },
       "block_order": [
-        "announcement_BxgCk9"
+        "announcement_BxgCk9",
+        "announcement_bxBw4H"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
@@ -38,7 +52,7 @@
         "color_scheme": "scheme-4",
         "divider_width": 0,
         "padding-block-start": 10,
-        "padding-block-end": 8
+        "padding-block-end": 10
       }
     },
     "header_section": {
