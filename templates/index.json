@@ -86,7 +86,15 @@
       },
       "name": "t:names.collections_carousel",
       "settings": {
-        "collection_list": [],
+        "collection_list": [
+          "lego",
+          "playmobil",
+          "barbie",
+          "nancy",
+          "disney",
+          "fisher-price",
+          "hot-wheels"
+        ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "columns": 5,
