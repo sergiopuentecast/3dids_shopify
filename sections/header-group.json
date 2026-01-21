@@ -27,6 +27,20 @@
           },
           "blocks": {}
         },
+        "announcement_4y9Kqp": {
+          "type": "_announcement",
+          "name": "t:names.announcement",
+          "settings": {
+            "text": "<strong>CONTACTA EN </strong><a href=\"mailto:pedidos@juguettos.es\"><strong>PEDIDOS@JUGUETTOS.ES</strong></a><strong> SI TIENES ALGÚN PROBLEMA</strong>",
+            "link": "",
+            "font": "var(--font-subheading--family)",
+            "font_size": "0.75rem",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        },
         "announcement_bxBw4H": {
           "type": "_announcement",
           "settings": {
@@ -43,6 +57,7 @@
       },
       "block_order": [
         "announcement_BxgCk9",
+        "announcement_4y9Kqp",
         "announcement_bxBw4H"
       ],
       "name": "t:names.announcement_bar",
@@ -81,7 +96,7 @@
             "type_font_primary_link": "body",
             "type_case_primary_link": "none",
             "menu_style": "featured_products",
-            "featured_products_aspect_ratio": "4 / 5",
+            "featured_products_aspect_ratio": "adapt",
             "featured_collections_aspect_ratio": "16 / 9",
             "image_border_radius": 0,
             "navigation_bar": false,
@@ -93,6 +108,9 @@
           "blocks": {}
         }
       },
+      "custom_css": [
+        ".gm-menu:not(.gm-menu-mobile) .gm-level-0 > .gm-target {height: 25px;}"
+      ],
       "settings": {
         "logo_position": "left",
         "menu_position": "center",
@@ -107,8 +125,8 @@
         "localization_font_size": "0.875rem",
         "localization_position": "right",
         "localization_row": "top",
-        "section_width": "page-width",
-        "section_height": "standard",
+        "section_width": "full-width",
+        "section_height": "compact",
         "enable_sticky_header": "always",
         "divider_width": 0,
         "divider_size": "page-width",

@@ -19,7 +19,8 @@
           "name": "t:names.icon",
           "settings": {
             "icon": "price_tag",
-            "width": 24,
+            "image_upload": "shopify://shop_images/elclub.png",
+            "width": 80,
             "link": "",
             "open_in_new_tab": false
           },
@@ -29,11 +30,11 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>New arrivals</h2>",
+            "text": "<h2><strong>Disfruta de todas las ventajas:</strong></h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "rte",
+            "type_preset": "h4",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
@@ -131,7 +132,8 @@
               "type": "icon",
               "settings": {
                 "icon": "eye",
-                "width": 32,
+                "image_upload": "shopify://shop_images/marcaspropias.png",
+                "width": 100,
                 "link": "",
                 "open_in_new_tab": false
               },
@@ -179,13 +181,13 @@
                 "text_hn7QcT": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Everything we do starts with why</p>",
+                    "text": "<p><strong>10% en<br/>marcas propias</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
                     "type_preset": "custom",
-                    "font": "var(--font-accent--family)",
-                    "font_size": "0.75rem",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "0.875rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -212,7 +214,7 @@
             "group_zXfRYx"
           ]
         },
-        "group_AtznAF": {
+        "group_WhKWYf": {
           "type": "group",
           "settings": {
             "content_direction": "column",
@@ -251,17 +253,18 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "icon_DkftWb": {
+            "icon_66kEwj": {
               "type": "icon",
               "settings": {
                 "icon": "eye",
-                "width": 32,
+                "image_upload": "shopify://shop_images/chequedescuento.png",
+                "width": 100,
                 "link": "",
                 "open_in_new_tab": false
               },
               "blocks": {}
             },
-            "group_CnMgBh": {
+            "group_ccDxBp": {
               "type": "group",
               "settings": {
                 "content_direction": "column",
@@ -300,16 +303,16 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_af3TwH": {
+                "text_TFRB3f": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Everything we do starts with why</p>",
+                    "text": "<p><strong>Cheque descuento de bienvenida</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "0.875rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -327,16 +330,16 @@
                 }
               },
               "block_order": [
-                "text_af3TwH"
+                "text_TFRB3f"
               ]
             }
           },
           "block_order": [
-            "icon_DkftWb",
-            "group_CnMgBh"
+            "icon_66kEwj",
+            "group_ccDxBp"
           ]
         },
-        "group_AqVyDQ": {
+        "group_Ec4baP": {
           "type": "group",
           "settings": {
             "content_direction": "column",
@@ -375,17 +378,18 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "icon_tnJJpn": {
+            "icon_eDkwBk": {
               "type": "icon",
               "settings": {
                 "icon": "eye",
-                "width": 32,
+                "image_upload": "shopify://shop_images/cumpleanos.png",
+                "width": 80,
                 "link": "",
                 "open_in_new_tab": false
               },
               "blocks": {}
             },
-            "group_rG6Qqq": {
+            "group_ar7Rk8": {
               "type": "group",
               "settings": {
                 "content_direction": "column",
@@ -424,16 +428,16 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_aQqRre": {
+                "text_rE7i9N": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Everything we do starts with why</p>",
+                    "text": "<p><strong>Cheque descuento<br/>para cumpleaños</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "0.875rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -451,16 +455,16 @@
                 }
               },
               "block_order": [
-                "text_aQqRre"
+                "text_rE7i9N"
               ]
             }
           },
           "block_order": [
-            "icon_tnJJpn",
-            "group_rG6Qqq"
+            "icon_eDkwBk",
+            "group_ar7Rk8"
           ]
         },
-        "group_FJa8YY": {
+        "group_YnQDzw": {
           "type": "group",
           "settings": {
             "content_direction": "column",
@@ -499,17 +503,18 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "icon_kxXtaT": {
+            "icon_7Ybi9T": {
               "type": "icon",
               "settings": {
                 "icon": "eye",
-                "width": 32,
+                "image_upload": "shopify://shop_images/promocionesespeciales.png",
+                "width": 100,
                 "link": "",
                 "open_in_new_tab": false
               },
               "blocks": {}
             },
-            "group_nP9fGm": {
+            "group_JJWxKg": {
               "type": "group",
               "settings": {
                 "content_direction": "column",
@@ -548,16 +553,16 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_BbWTRL": {
+                "text_yiLLQt": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Everything we do starts with why</p>",
+                    "text": "<p><strong>Promociones <br/>especiales</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "0.875rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -575,16 +580,16 @@
                 }
               },
               "block_order": [
-                "text_BbWTRL"
+                "text_yiLLQt"
               ]
             }
           },
           "block_order": [
-            "icon_kxXtaT",
-            "group_nP9fGm"
+            "icon_7Ybi9T",
+            "group_JJWxKg"
           ]
         },
-        "group_fwNgfi": {
+        "group_T6BrCf": {
           "type": "group",
           "settings": {
             "content_direction": "column",
@@ -623,17 +628,18 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "icon_WDtFVA": {
+            "icon_mgaYUG": {
               "type": "icon",
               "settings": {
                 "icon": "eye",
-                "width": 32,
+                "image_upload": "shopify://shop_images/marcapropia.png",
+                "width": 100,
                 "link": "",
                 "open_in_new_tab": false
               },
               "blocks": {}
             },
-            "group_DpMQJA": {
+            "group_UJnbHp": {
               "type": "group",
               "settings": {
                 "content_direction": "column",
@@ -672,16 +678,16 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_B9N4Vi": {
+                "text_tHjkdg": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Everything we do starts with why</p>",
+                    "text": "<p><strong>20% en marca propia<br/>familia numerosa</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "0.875rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -699,16 +705,16 @@
                 }
               },
               "block_order": [
-                "text_B9N4Vi"
+                "text_tHjkdg"
               ]
             }
           },
           "block_order": [
-            "icon_WDtFVA",
-            "group_DpMQJA"
+            "icon_mgaYUG",
+            "group_UJnbHp"
           ]
         },
-        "group_kc8xBp": {
+        "group_ABPmjg": {
           "type": "group",
           "settings": {
             "content_direction": "column",
@@ -747,17 +753,18 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "icon_qjUghq": {
+            "icon_d3y6PW": {
               "type": "icon",
               "settings": {
                 "icon": "eye",
-                "width": 32,
+                "image_upload": "shopify://shop_images/club.png",
+                "width": 100,
                 "link": "",
                 "open_in_new_tab": false
               },
               "blocks": {}
             },
-            "group_HnzxyD": {
+            "group_BQCARq": {
               "type": "group",
               "settings": {
                 "content_direction": "column",
@@ -796,16 +803,16 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_jaeLyK": {
+                "text_YBFGTd": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Everything we do starts with why</p>",
+                    "text": "<p><strong>Ampas Club20% de descuento</strong></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "0.875rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -823,23 +830,23 @@
                 }
               },
               "block_order": [
-                "text_jaeLyK"
+                "text_YBFGTd"
               ]
             }
           },
           "block_order": [
-            "icon_qjUghq",
-            "group_HnzxyD"
+            "icon_d3y6PW",
+            "group_BQCARq"
           ]
         }
       },
       "block_order": [
         "group_JzbYwD",
-        "group_AtznAF",
-        "group_AqVyDQ",
-        "group_FJa8YY",
-        "group_fwNgfi",
-        "group_kc8xBp"
+        "group_WhKWYf",
+        "group_Ec4baP",
+        "group_YnQDzw",
+        "group_T6BrCf",
+        "group_ABPmjg"
       ],
       "name": "t:names.icons_with_text",
       "settings": {
@@ -866,7 +873,7 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 48,
+        "padding-block-start": 40,
         "padding-block-end": 50
       }
     },
