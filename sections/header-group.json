@@ -141,10 +141,22 @@
         "enable_transparent_header_collection": false,
         "collection_color_scheme": "default"
       }
+    },
+    "whatsapp_icon_3dids_4RfhXR": {
+      "type": "whatsapp-icon-3dids",
+      "name": "WhatsApp Floating Button",
+      "settings": {
+        "enable": true,
+        "whatsapp_link": "https://wa.me/34696895072?text=Hola",
+        "icon_image": "shopify://shop_images/WhatsApp_svg.png",
+        "icon_size": 50,
+        "position": "right"
+      }
     }
   },
   "order": [
     "header_announcements_9jGBFp",
-    "header_section"
+    "header_section",
+    "whatsapp_icon_3dids_4RfhXR"
   ]
 }
