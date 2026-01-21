@@ -1,0 +1,94 @@
+{% if section.settings.enable %}
+  <a
+    href="{{ section.settings.whatsapp_link }}"
+    class="whatsapp-floating-button position-{{ section.settings.position }}"
+    target="_blank"
+    aria-label="Chat on WhatsApp"
+  >
+    {% if section.settings.icon_image %}
+      <img
+        src="{{ section.settings.icon_image | image_url: width: 200 }}"
+        alt="WhatsApp"
+        style="width: {{ section.settings.icon_size }}px;"
+      >
+    {% else %}
+      <span style="font-size: {{ section.settings.icon_size }}px;">💬</span>
+    {% endif %}
+  </a>
+{% endif %}
+
+<style>
+.whatsapp-floating-button {
+  position: fixed;
+  bottom: 20px;
+  z-index: 9999;
+}
+
+.whatsapp-floating-button img {
+  display: block;
+  height: auto;
+}
+
+.position-right {
+  right: 20px;
+}
+
+.position-left {
+  left: 20px;
+}
+</style>
+
+{% schema %}
+{
+  "name": "WhatsApp Floating Button",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "label": "Enable WhatsApp Button",
+      "default": true
+    },
+    {
+      "type": "text",
+  "id": "whatsapp_link",
+  "label": "WhatsApp link (https://wa.me/...)",
+  "default": "https://wa.me/123456789"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_image",
+      "label": "WhatsApp Icon Image"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon Size (px)",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Button Position",
+      "default": "right",
+      "options": [
+        {
+          "value": "right",
+          "label": "Bottom Right"
+        },
+        {
+          "value": "left",
+          "label": "Bottom Left"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WhatsApp Floating Button"
+    }
+  ]
+}
+{% endschema %}

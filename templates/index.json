@@ -1600,6 +1600,17 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "whatsapp_icon_3dids_gPUQG7": {
+      "type": "whatsapp-icon-3dids",
+      "name": "WhatsApp Floating Button",
+      "settings": {
+        "enable": true,
+        "whatsapp_link": "https://wa.me/34696895072?text=Hola",
+        "icon_image": "shopify://shop_images/WhatsApp_svg.png",
+        "icon_size": 50,
+        "position": "right"
+      }
     }
   },
   "order": [
@@ -1610,6 +1621,7 @@
     "section_TMMYgr",
     "section_fM6YaF",
     "section_WtF7qW",
-    "collection_list_UzhYpp"
+    "collection_list_UzhYpp",
+    "whatsapp_icon_3dids_gPUQG7"
   ]
 }
