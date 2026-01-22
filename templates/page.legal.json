@@ -21,7 +21,10 @@
       "block_order": [
         "page-content"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".page-width-content {display: block; max-width: 1440px; padding: 0 1rem;}",
+        ".section-wrapper {display: flex; justify-content: center;}"
+      ],
       "settings": {
         "content_direction": "column",
         "gap": 32,

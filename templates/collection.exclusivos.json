@@ -56,7 +56,7 @@
             "filter_width": "centered",
             "text_label_case": "default",
             "show_swatch_label": false,
-            "show_filter_label": false,
+            "show_filter_label": true,
             "enable_sorting": true,
             "enable_grid_density": true,
             "inherit_color_scheme": true,
@@ -127,6 +127,26 @@
               },
               "blocks": {}
             },
+            "sku_VwnbAU": {
+              "type": "sku",
+              "name": "t:names.product_sku",
+              "settings": {
+                "type_preset": "",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "price_EzJzMm": {
               "type": "price",
               "settings": {
@@ -148,12 +168,52 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "buy_buttons_QDXkG3": {
+              "type": "buy-buttons",
+              "name": "t:names.product_buy_buttons",
+              "settings": {
+                "stacking": false,
+                "show_pickup_availability": true,
+                "gift_card_form": true,
+                "padding-block-start": 15,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button-secondary"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
             }
           },
           "block_order": [
             "card-gallery",
             "product_title_4nY4eT",
-            "price_EzJzMm"
+            "sku_VwnbAU",
+            "price_EzJzMm",
+            "buy_buttons_QDXkG3"
           ]
         }
       },
