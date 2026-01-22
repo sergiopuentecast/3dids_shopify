@@ -163,6 +163,21 @@
       href="{{ product.selected_or_first_available_variant.url }}"
       aria-label="{{- product.title -}}"
     >
+    {% liquid
+  # Cambia custom.sticker por tu namespace/key real
+  assign sticker_image = product.metafields.custom.imagen_oferta.value
+%}
+
+{% if sticker_image != blank %}
+  <div class="product-sticker" aria-hidden="true">
+    <img
+      src="{{ sticker_image | image_url: width: 200 }}"
+      alt=""
+      loading="lazy"
+    >
+  </div>
+{% endif %}
+
       {% render 'slideshow',
         ref: 'slideshow',
         initial_slide: 0,
@@ -203,8 +218,32 @@
 </div>
 
 {% stylesheet %}
+/* Sticker por producto (metafield) */
+.product-sticker {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.product-sticker img {
+  display: block;
+  height: auto;
+  /* tamaño base (responsive) */
+  width: 70px;
+}
+
+/* Si quieres que en cards grandes se vea aún más */
+@media screen and (max-width: 749px) {
+  .product-sticker img {
+    width: 50px;
+  }
+}
+
   .card-gallery {
     overflow: hidden;
+    position: relative; /* necesario para el sticker absoluto */
     container-type: inline-size; /* Make card-gallery a container */
     container-name: card-gallery-container; /* Optional: name the container */
   }
