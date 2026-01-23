@@ -1,0 +1,234 @@
+{% liquid
+  assign list = blank
+
+  if section.settings.source_metafield != blank and section.settings.source_metafield.value != blank
+    assign list = section.settings.source_metafield.value
+  else
+    assign list = collection.metafields.custom.colecciones_relacionados.value
+  endif
+
+  assign title_align = section.settings.title_align
+  assign title_size = section.settings.title_size
+%}
+
+<div
+  class="section cmf-{{ section.id }}"
+  style="
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  {% if section.settings.title != blank %}
+    <div class="cmf-title cmf-title--{{ title_align }} cmf-title--{{ title_size }}">
+      {{ section.settings.title }}
+    </div>
+  {% endif %}
+
+  {% if list != blank %}
+    <div class="cmf-flex">
+      {% for c in list %}
+        <a
+          class="cmf-item"
+          href="{{ c.url }}"
+        >
+          {{ c.title }}
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {%- content_for 'blocks' -%}
+</div>
+
+<style>
+  /* TITLE */
+  .cmf-{{ section.id }} .cmf-title { margin-bottom: 16px; }
+  .cmf-{{ section.id }} .cmf-title--left { text-align: left; }
+  .cmf-{{ section.id }} .cmf-title--center { text-align: center; }
+  .cmf-{{ section.id }} .cmf-title--right { text-align: right; }
+
+  .cmf-{{ section.id }} .cmf-title--s { font-size: 18px; }
+  .cmf-{{ section.id }} .cmf-title--m { font-size: 24px; }
+  .cmf-{{ section.id }} .cmf-title--l { font-size: 32px; }
+
+  /* FLEX LAYOUT */
+  .cmf-{{ section.id }} .cmf-flex{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap: {{ section.settings.gap }}px;
+  }
+
+  /* ITEM */
+  .cmf-{{ section.id }} .cmf-item{
+    text-decoration:none;
+    background: {{ section.settings.item_bg }};
+    border-radius: {{ section.settings.item_radius }}px;
+
+    padding:
+      {{ section.settings.item_padding_y }}px
+      {{ section.settings.item_padding_x }}px;
+
+    {% if section.settings.show_border %}
+      border: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+    {% else %}
+      border: none;
+    {% endif %}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Custom filters",
+  "class": "ui-test-custom-filters",
+  "blocks": [
+    { "type": "@theme" },
+    { "type": "@app" }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Título",
+      "default": "<p><strong>Colecciones relacionadas</strong></p>"
+    },
+    {
+      "type": "select",
+      "id": "title_align",
+      "label": "Alineación del título",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Tamaño del título",
+      "options": [
+        { "value": "s", "label": "Pequeño" },
+        { "value": "m", "label": "Medio" },
+        { "value": "l", "label": "Grande" }
+      ],
+      "default": "m"
+    },
+    {
+      "type": "text",
+      "id": "source_metafield",
+      "label": "Metafield (origen dinámico)",
+      "info": "Insertar origen dinámico → seleccionar metafield tipo List of collections"
+    },
+
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Separación entre items",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+
+    {
+      "type": "header",
+      "content": "Items (colecciones)"
+    },
+    {
+      "type": "color",
+      "id": "item_bg",
+      "label": "Fondo",
+      "default": "#F1F4FA"
+    },
+    {
+      "type": "range",
+      "id": "item_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "item_padding_x",
+      "label": "Padding horizontal item",
+      "min": 4,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "item_padding_y",
+      "label": "Padding vertical item",
+      "min": 4,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Mostrar borde",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Grosor del borde",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Color del borde",
+      "default": "#000000"
+    },
+
+    {
+      "type": "header",
+      "content": "Padding sección"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding superior",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding inferior",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom filters"
+    }
+  ]
+}
+{% endschema %}
