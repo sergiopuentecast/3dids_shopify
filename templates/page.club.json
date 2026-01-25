@@ -934,356 +934,339 @@
         "padding-block-end": 50
       }
     },
-    "section_LNarNH": {
-      "type": "section",
+    "image_text_custom_mTf6EM": {
+      "type": "image-text-custom",
       "blocks": {
-        "image_CQddP6": {
-          "type": "image",
+        "title_qe9fT9": {
+          "type": "title",
           "settings": {
-            "image": "shopify://shop_images/chica.png",
-            "link": "",
-            "image_ratio": "adapt",
-            "width": "fill",
-            "custom_width": 50,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "text": "<p><strong>10% de descuento en Marca Propia</strong></p>"
+          }
         },
-        "group_C8wXdd": {
-          "type": "group",
+        "body_TkzeLz": {
+          "type": "body",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "custom",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_D4wkiE": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<h2><strong>10% de descuento<br/>en Marca Propia</strong></h2>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_qxfCT3": {
-              "type": "text",
-              "settings": {
-                "text": "<p><strong>Sólo por ser de nuestro Club Juguettos, tendrás un10% de descuento en todas nuestras</strong><span style=\"text-decoration:underline\"><strong>marcas exclusivas Juguettos.</strong></span></p>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "button_PjUWtd": {
-              "type": "button",
-              "settings": {
-                "label": "¡QUIERO ENTRAR AL CLUB!",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_D4wkiE",
-            "text_qxfCT3",
-            "button_PjUWtd"
-          ]
+            "text": "<p>Sólo por ser de nuestro Club Juguettos, tendrás un10% de descuento en todas nuestras<strong> </strong><span style=\"text-decoration:underline\"><strong>marcas exclusivas Juguettos.</strong></span></p>"
+          }
+        },
+        "button_EEjPJ9": {
+          "type": "button",
+          "settings": {
+            "label": "¡QUIERO ENTRAR AL CLUB!",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "image_CQddP6",
-        "group_C8wXdd"
+        "title_qe9fT9",
+        "body_TkzeLz",
+        "button_EEjPJ9"
       ],
-      "custom_css": [
-        "img {width: 70%;}",
-        ".image-block {justify-content: flex-end;}",
-        "a {font-size: 18px;}",
-        "a:hover {border: 1px solid;}"
-      ],
-      "name": "t:names.image_with_text",
+      "custom_css": [],
+      "name": "Image + Text (Custom)",
       "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-end",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 100,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "image": "shopify://shop_images/chica.png",
+        "media_position_desktop": "left",
+        "mobile_order": "media_first",
+        "text_align_desktop": "left",
+        "text_align_mobile": "center",
+        "title_font_size": 25,
+        "body_font_size": 18,
+        "v_align_desktop": "center",
+        "v_align_mobile": "center",
+        "image_fit": "contain",
+        "media_bg": "rgba(0,0,0,0)",
+        "media_radius": 27,
+        "image_align_desktop": "right",
+        "image_align_mobile": "center",
+        "button_font_size": 16,
+        "button_padding_y": 15,
+        "button_padding_x": 40,
+        "button_radius": 20,
+        "button_border_width": 1,
+        "button_bg": "#001c85",
+        "button_text": "#ffffff",
+        "button_border": "#001c85",
+        "button_bg_hover": "#ffffff",
+        "button_text_hover": "#001c85",
+        "button_border_hover": "#001c85",
+        "image_width_desktop": 70,
+        "image_width_mobile": 100,
+        "gap": 64,
+        "padding_top": 36,
+        "padding_bottom": 24,
+        "text_margin_top_desktop": 0,
+        "text_margin_bottom_desktop": 0,
+        "text_margin_top_mobile": 0,
+        "text_margin_bottom_mobile": 0
       }
     },
-    "section_xmaGmy": {
-      "type": "section",
+    "image_text_custom_TwwcDD": {
+      "type": "image-text-custom",
       "blocks": {
-        "group_MxtAAD": {
-          "type": "group",
+        "title_ej4Jmm": {
+          "type": "title",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "custom",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 100,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_aPmdT4": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<h2>Cheque descuento<br/>de bienvenida</h2>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_nqqxyJ": {
-              "type": "text",
-              "settings": {
-                "text": "<p>En Juguettos queremos darte la bienvenida de una forma especial ¡Te regalamos un <strong>vale de descuento de 3€</strong> para canjear en una compra igual o superior a 30€ tanto en tienda como en juguettos.com!</p><p>Te enviaremos el cheque a tu correo electrónico <strong>tras finalizar el registro en el Club.</strong></p>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "button_UFzqtb": {
-              "type": "button",
-              "settings": {
-                "label": "¡QUIERO ENTRAR AL CLUB!",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_aPmdT4",
-            "text_nqqxyJ",
-            "button_UFzqtb"
-          ]
+            "text": "<h3><strong>Cheque descuento<br/>de bienvenida</strong></h3>"
+          }
         },
-        "image_KwqLWz": {
-          "type": "image",
+        "body_qER7xb": {
+          "type": "body",
           "settings": {
-            "image": "shopify://shop_images/Group_2277.png",
-            "link": "",
-            "image_ratio": "adapt",
-            "width": "fill",
-            "custom_width": 50,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "text": "<p>En Juguettos queremos darte la bienvenida de una forma especial ¡Te regalamos un <strong>vale de descuento de 3€</strong> para canjear en una compra igual o superior a 30€ tanto en tienda como en juguettos.com!</p><p>Te enviaremos el cheque a tu correo electrónico <strong>tras finalizar el registro en el Club.</strong></p>"
+          }
+        },
+        "button_BT9cew": {
+          "type": "button",
+          "settings": {
+            "label": "¡QUIERO ENTRAR AL CLUB!",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "group_MxtAAD",
-        "image_KwqLWz"
+        "title_ej4Jmm",
+        "body_qER7xb",
+        "button_BT9cew"
       ],
-      "custom_css": [
-        "img {width: 70%;}",
-        ".image-block {justify-content: center;}",
-        "a {font-size: 18px;}",
-        "a:hover {border: 1px solid;}"
-      ],
-      "name": "t:names.image_with_text",
+      "custom_css": [],
+      "name": "Image + Text (Custom)",
       "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-end",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 0,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "image": "shopify://shop_images/Group_2277.png",
+        "media_position_desktop": "right",
+        "mobile_order": "media_first",
+        "text_align_desktop": "left",
+        "text_align_mobile": "center",
+        "title_font_size": 25,
+        "body_font_size": 18,
+        "v_align_desktop": "center",
+        "v_align_mobile": "center",
+        "image_fit": "contain",
+        "media_bg": "rgba(0,0,0,0)",
+        "media_radius": 27,
+        "image_align_desktop": "center",
+        "image_align_mobile": "center",
+        "button_font_size": 16,
+        "button_padding_y": 15,
+        "button_padding_x": 40,
+        "button_radius": 20,
+        "button_border_width": 1,
+        "button_bg": "#001c85",
+        "button_text": "#ffffff",
+        "button_border": "#001c85",
+        "button_bg_hover": "#ffffff",
+        "button_text_hover": "#001c85",
+        "button_border_hover": "#001c85",
+        "image_width_desktop": 70,
+        "image_width_mobile": 100,
+        "gap": 64,
+        "padding_top": 36,
+        "padding_bottom": 24,
+        "text_margin_top_desktop": 0,
+        "text_margin_bottom_desktop": 0,
+        "text_margin_top_mobile": 0,
+        "text_margin_bottom_mobile": 0
+      }
+    },
+    "image_text_custom_UnfNCb": {
+      "type": "image-text-custom",
+      "blocks": {
+        "title_K6ka4d": {
+          "type": "title",
+          "settings": {
+            "text": "<h3><strong>Cheque descuento<br/>de cumpleaños</strong></h3>"
+          }
+        },
+        "body_c7Ccbn": {
+          "type": "body",
+          "settings": {
+            "text": "<p>Como el día del cumple de tus hij@s, niet@s, sobrin@s, etc... es especial,<strong> te regalamos 3€ de descuento</strong> en una compra igual o superior a 30€, canjeable en tiendas Juguettos o en juguettos.com<br/>Se enviará este cupón hasta que cumplan 12 años.<br/><strong>Recuerda registrarlos en tu perfil para recibir el cupón.</strong></p>"
+          }
+        },
+        "button_cQdmFq": {
+          "type": "button",
+          "settings": {
+            "label": "¡QUIERO ENTRAR AL CLUB!",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_K6ka4d",
+        "body_c7Ccbn",
+        "button_cQdmFq"
+      ],
+      "custom_css": [],
+      "name": "Image + Text (Custom)",
+      "settings": {
+        "image": "shopify://shop_images/Group_22799.png",
+        "media_position_desktop": "left",
+        "mobile_order": "media_first",
+        "text_align_desktop": "left",
+        "text_align_mobile": "center",
+        "title_font_size": 25,
+        "body_font_size": 18,
+        "v_align_desktop": "center",
+        "v_align_mobile": "center",
+        "image_fit": "contain",
+        "media_bg": "rgba(0,0,0,0)",
+        "media_radius": 27,
+        "image_align_desktop": "right",
+        "image_align_mobile": "center",
+        "button_font_size": 16,
+        "button_padding_y": 15,
+        "button_padding_x": 40,
+        "button_radius": 20,
+        "button_border_width": 1,
+        "button_bg": "#001c85",
+        "button_text": "#ffffff",
+        "button_border": "#001c85",
+        "button_bg_hover": "#ffffff",
+        "button_text_hover": "#001c85",
+        "button_border_hover": "#001c85",
+        "image_width_desktop": 80,
+        "image_width_mobile": 100,
+        "gap": 64,
+        "padding_top": 36,
+        "padding_bottom": 24,
+        "text_margin_top_desktop": 0,
+        "text_margin_bottom_desktop": 0,
+        "text_margin_top_mobile": 0,
+        "text_margin_bottom_mobile": 0
+      }
+    },
+    "image_text_custom_NB8RMP": {
+      "type": "image-text-custom",
+      "blocks": {
+        "title_dgJ4iB": {
+          "type": "title",
+          "settings": {
+            "text": "<h3><strong>Promociones<br/>especiales</strong></h3>"
+          }
+        },
+        "body_e7yQwg": {
+          "type": "body",
+          "settings": {
+            "text": "<p>No te pierdas las <strong>promociones especiales </strong>que enviaremos a tu email, ¡grandes descuentos te esperan!</p>"
+          }
+        },
+        "button_8QBJD9": {
+          "type": "button",
+          "settings": {
+            "label": "¡QUIERO ENTRAR AL CLUB!",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_dgJ4iB",
+        "body_e7yQwg",
+        "button_8QBJD9"
+      ],
+      "custom_css": [],
+      "name": "Image + Text (Custom)",
+      "settings": {
+        "image": "shopify://shop_images/Group_2280.png",
+        "media_position_desktop": "right",
+        "mobile_order": "media_first",
+        "text_align_desktop": "left",
+        "text_align_mobile": "center",
+        "title_font_size": 25,
+        "body_font_size": 18,
+        "v_align_desktop": "center",
+        "v_align_mobile": "center",
+        "image_fit": "contain",
+        "media_bg": "rgba(0,0,0,0)",
+        "media_radius": 27,
+        "image_align_desktop": "center",
+        "image_align_mobile": "center",
+        "button_font_size": 16,
+        "button_padding_y": 15,
+        "button_padding_x": 40,
+        "button_radius": 20,
+        "button_border_width": 1,
+        "button_bg": "#001c85",
+        "button_text": "#ffffff",
+        "button_border": "#001c85",
+        "button_bg_hover": "#ffffff",
+        "button_text_hover": "#001c85",
+        "button_border_hover": "#001c85",
+        "image_width_desktop": 75,
+        "image_width_mobile": 100,
+        "gap": 64,
+        "padding_top": 36,
+        "padding_bottom": 24,
+        "text_margin_top_desktop": 0,
+        "text_margin_bottom_desktop": 0,
+        "text_margin_top_mobile": 0,
+        "text_margin_bottom_mobile": 0
+      }
+    },
+    "image_text_custom_4AwArJ": {
+      "type": "image-text-custom",
+      "blocks": {
+        "title_gkJqzC": {
+          "type": "title",
+          "settings": {
+            "text": "<h3><strong>20% de descuento<br/>familia numerosa</strong></h3>"
+          }
+        },
+        "body_RRmgwe": {
+          "type": "body",
+          "settings": {
+            "text": "<p>Cuando te registres en juguettos.com, si tienes <strong>carné de familia numerosa</strong> envía un email a soporte-club@juguettos.es con la foto del carné e indica el número de título. También necesitaremos nombre y fecha de nacimiento de tus hij@s. Indica el código de tu tarjeta en el registro para que te aplique el 20% de descuento en marca propia.</p><p><br/>Este descuento no es acumulable al 10% del Club Juguettos.</p>"
+          }
+        },
+        "button_yKzak6": {
+          "type": "button",
+          "settings": {
+            "label": "¡QUIERO ENTRAR AL CLUB!",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_gkJqzC",
+        "body_RRmgwe",
+        "button_yKzak6"
+      ],
+      "custom_css": [],
+      "name": "Image + Text (Custom)",
+      "settings": {
+        "image": "shopify://shop_images/Group_2281.png",
+        "media_position_desktop": "left",
+        "mobile_order": "media_first",
+        "text_align_desktop": "left",
+        "text_align_mobile": "center",
+        "title_font_size": 25,
+        "body_font_size": 18,
+        "v_align_desktop": "center",
+        "v_align_mobile": "center",
+        "image_fit": "contain",
+        "media_bg": "rgba(0,0,0,0)",
+        "media_radius": 27,
+        "image_align_desktop": "right",
+        "image_align_mobile": "center",
+        "button_font_size": 16,
+        "button_padding_y": 15,
+        "button_padding_x": 40,
+        "button_radius": 20,
+        "button_border_width": 1,
+        "button_bg": "#001c85",
+        "button_text": "#ffffff",
+        "button_border": "#001c85",
+        "button_bg_hover": "#ffffff",
+        "button_text_hover": "#001c85",
+        "button_border_hover": "#001c85",
+        "image_width_desktop": 80,
+        "image_width_mobile": 100,
+        "gap": 64,
+        "padding_top": 36,
+        "padding_bottom": 24,
+        "text_margin_top_desktop": 0,
+        "text_margin_bottom_desktop": 0,
+        "text_margin_top_mobile": 0,
+        "text_margin_bottom_mobile": 0
       }
     }
   },
@@ -1291,7 +1274,10 @@
     "main",
     "section_3GM7iA",
     "section_WrDr7E",
-    "section_LNarNH",
-    "section_xmaGmy"
+    "image_text_custom_mTf6EM",
+    "image_text_custom_TwwcDD",
+    "image_text_custom_UnfNCb",
+    "image_text_custom_NB8RMP",
+    "image_text_custom_4AwArJ"
   ]
 }
