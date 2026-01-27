@@ -38,7 +38,12 @@
     {{ content_for_header }}
   </head>
 
-  <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
+  <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}
+  template-{{ template.name }}
+  {% if template.suffix != blank %}template-suffix-{{ template.suffix }}{% endif %}
+  {% if request.page_type == 'page' %}page-{{ page.handle }}{% endif %}
+">
+
     {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
     <div id="header-group">
       {% sections 'header-group' %}
@@ -113,5 +118,23 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+    
+    <!-- Start of oct8ne code -->
+   <script type="text/javascript">
+     var oct8ne = document.createElement("script");
+     oct8ne.server = "backoffice-eu.oct8ne.com/";
+     oct8ne.type = "text/javascript";
+     oct8ne.async = true;
+     oct8ne.license ="DC629880548A001860620F0658759595";
+     oct8ne.src = (document.location.protocol == "https:" ? "https://" : "http://") + "static-eu.oct8ne.com/api/v2/oct8ne.js?" + (Math.round(new Date().getTime() / 86400000));
+     oct8ne.locale = "es-ES";
+     oct8ne.baseUrl ="//sergiopuente-prueba3dids.myshopify.com";
+     var s = document.getElementsByTagName("script")[0];
+     insertOct8ne();
+     function insertOct8ne() {
+               s.parentNode.insertBefore(oct8ne, s);
+     }
+   </script>
+<!--End of oct8ne code -->
   </body>
 </html>

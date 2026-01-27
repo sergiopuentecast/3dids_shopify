@@ -4040,3 +4040,41 @@ text-component {
     font-size: max(1rem, 100%);
   }
 }
+
+body.template-suffix-imaginarium {
+  --color-primary: #69cadc; /* azul claro */
+  --color-accent:  #69cadc;
+  --color-link:    #69cadc;
+}
+
+
+body.template-suffix-imaginarium .button,
+body.template-suffix-imaginarium button {
+  background-color: #69cadc;
+  border-color: #69cadc;
+}
+
+
+body.template-suffix-imaginarium .color-scheme-3{
+background-color: #69cadc !important;
+color: white !important;
+}
+
+body.template-suffix-imaginarium .color-scheme-4{
+background-color: #CBEEF5 !important;
+color: #2993A7 !important;
+}
+
+body.template-suffix-imaginarium .slideshow-control{
+background-color: #CBEEF5 !important;
+color: #2993A7 !important;
+}
+
+.price.price--sale {
+  color: rgb(220 38 38); /* rojo */
+}
+
+.compare-at-price {
+  text-decoration: line-through;
+  opacity: .7;
+}
