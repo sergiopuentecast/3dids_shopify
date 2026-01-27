@@ -11,10 +11,13 @@
   "sections": {
     "hero_abkjw9": {
       "type": "hero",
+      "custom_css": [
+        ".resource-list__slide {box-shadow: 0px 5px 0px 0px #c22821; border-radius: 10px;}"
+      ],
       "name": "t:names.hero_bottom_aligned",
       "settings": {
         "media_type_1": "image",
-        "image_1": "{{ collection.metafields.custom.imagen_banner.value }}",
+        "image_1": "shopify://shop_images/avland-323.jpg",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -42,6 +45,83 @@
         "reflection_opacity": 75,
         "padding-block-start": 0,
         "padding-block-end": 0
+      }
+    },
+    "collection_list_jWrNyU": {
+      "type": "collection-list",
+      "blocks": {
+        "static-collection-card": {
+          "type": "_collection-card",
+          "name": "t:names.collection_card",
+          "static": true,
+          "settings": {
+            "placement": "below_image",
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "collection_card_gap": 8,
+            "inherit_color_scheme": false,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 10
+          },
+          "blocks": {
+            "collection-card-image": {
+              "type": "_collection-card-image",
+              "name": "t:names.collection_card_image",
+              "static": true,
+              "settings": {
+                "image_ratio": "adapt",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 7,
+                "border_opacity": 42,
+                "border_radius": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        }
+      },
+      "custom_css": [
+        ".section-background {background: linear-gradient(180deg, #171e32 0%, #273656 100%);}",
+        ".resource-list__slide {box-shadow: 0px 5px 0px 0px #c22821; border-radius: 10px;}"
+      ],
+      "name": "t:names.collections_carousel",
+      "settings": {
+        "collection_list": [
+          "catalogo",
+          "construye",
+          "dragon-ball",
+          "harry-potter-fz",
+          "marvel",
+          "naruto",
+          "one-piece",
+          "pokemon",
+          "disney-fz",
+          "leon-fz"
+        ],
+        "layout_type": "carousel",
+        "carousel_on_mobile": false,
+        "columns": 7,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 25,
+        "bento_gap": 8,
+        "rows_gap": 8,
+        "max_collections": 4,
+        "icons_style": "arrow",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "gap": 0,
+        "color_scheme": "scheme-5",
+        "padding-block-start": 22,
+        "padding-block-end": 15
       }
     },
     "main": {
@@ -237,6 +317,7 @@
   },
   "order": [
     "hero_abkjw9",
+    "collection_list_jWrNyU",
     "main"
   ]
 }
