@@ -26,6 +26,45 @@
 <header-actions
   {{- block.shopify_attributes -}}
 >
+
+  {%- comment -%}
+    Quick links tipo Juguettos (icono + texto)
+    Requiere en Assets:
+    - icon-globe.svg
+    - icon-star.svg
+    - icon-location.svg
+    - icon-heart.svg
+  {%- endcomment -%}
+  <nav class="header-quicklinks" aria-label="Accesos rápidos">
+    <a class="header-quicklinks__item" href="/pages/peninsula">
+      <span class="svg-wrapper" aria-hidden="true">
+        {{ 'icon-globe.svg' | inline_asset_content }}
+      </span>
+      <span class="header-quicklinks__label">PENÍNSULA</span>
+    </a>
+
+    <a class="header-quicklinks__item" href="/pages/el-club">
+      <span class="svg-wrapper" aria-hidden="true">
+        {{ 'icon-star.svg' | inline_asset_content }}
+      </span>
+      <span class="header-quicklinks__label">EL CLUB</span>
+    </a>
+
+    <a class="header-quicklinks__item" href="/pages/tiendas">
+      <span class="svg-wrapper" aria-hidden="true">
+        {{ 'icon-location.svg' | inline_asset_content }}
+      </span>
+      <span class="header-quicklinks__label">TIENDAS</span>
+    </a>
+
+    <a class="header-quicklinks__item" href="/pages/favoritos">
+      <span class="svg-wrapper" aria-hidden="true">
+        {{ 'icon-heart.svg' | inline_asset_content }}
+      </span>
+      <span class="header-quicklinks__label">FAVORITOS</span>
+    </a>
+  </nav>
+
   {% if shop.customer_accounts_enabled %}
     <script
       src="{{ 'dialog.js' | asset_url }}"
@@ -100,6 +139,7 @@
         data-testid="cart-drawer-trigger"
       >
         {{ cart_icon }}
+        <span class="header-action-with-label__text">MI CESTA</span>
       </button>
 
       <dialog
@@ -203,6 +243,9 @@
 </header-actions>
 
 {% stylesheet %}
+.header-action-with-label__text{
+  font-size: 11px;
+}
   .account-popover {
     --account-popover-min-width: 22rem;
     --account-actions-max-width: 22rem;
@@ -312,8 +355,8 @@
 
   .account-drawer__close-button .svg-wrapper {
     display: flex;
-    width: var(--button-size);
-    height: var(--button-size);
+    /*width: var(--button-size);*/
+    /*height: var(--button-size);*/
     align-items: center;
     justify-content: center;
   }
@@ -579,10 +622,11 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
 
   .header-actions__action .svg-wrapper {
-    height: var(--button-size);
+    /*height: var(--button-size);*/
     width: var(--button-size);
   }
 
@@ -665,5 +709,49 @@
       --cart-bubble-top: 4px;
       --cart-bubble-right: 4px;
     }
+  }
+
+  /* ====== NUEVO: iconos + texto tipo Juguettos ====== */
+  .header-quicklinks{
+    display:flex;
+    align-items:center;
+    /*margin-inline-end: var(--gap-sm)*/;
+  }
+
+  .header-quicklinks__item{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color: var(--color-foreground);
+    padding: 0 var(--padding-2xs);
+    min-width: 64px;
+    gap:3px;
+  }
+
+  .header-quicklinks__item .svg-wrapper{
+    width: var(--button-size);
+    /*height: 40px*/;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .header-quicklinks__item svg{
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+  }
+
+  .header-quicklinks__label{
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+
+  /* Ocultar en móvil */
+  @media screen and (max-width: 989px){
+    .header-quicklinks{ display:none; }
   }
 {% endstylesheet %}
