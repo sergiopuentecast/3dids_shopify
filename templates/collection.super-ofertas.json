@@ -11,9 +11,7 @@
   "sections": {
     "hero_abkjw9": {
       "type": "hero",
-      "custom_css": [
-        "{margin: 0 7rem;}"
-      ],
+      "custom_css": [],
       "name": "t:names.hero_bottom_aligned",
       "settings": {
         "media_type_1": "image",
@@ -50,7 +48,7 @@
     "filters_collection_3dids_JB74D3": {
       "type": "filters-collection-3dids",
       "custom_css": [
-        "a{font-size: 13px;}"
+        "a {font-size: 13px;}"
       ],
       "name": "Custom filters",
       "settings": {
@@ -59,7 +57,7 @@
         "title_size": "m",
         "source_metafield": "",
         "gap": 16,
-        "item_bg": "#F1F4FA",
+        "item_bg": "#f1f4fa",
         "item_radius": 10,
         "item_padding_x": 10,
         "item_padding_y": 5,
@@ -218,7 +216,7 @@
         "products_per_page": 24,
         "product_grid_width": "centered",
         "full_width_on_mobile": true,
-        "columns_gap_horizontal": 16,
+        "columns_gap_horizontal": 28,
         "columns_gap_vertical": 24,
         "padding-inline-start": 0,
         "padding-inline-end": 0,

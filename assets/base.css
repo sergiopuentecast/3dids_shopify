@@ -4054,6 +4054,10 @@ body.collection-imaginarium button {
   border-color: #69cadc;
 }
 
+body.collection-imaginarium .header-searchfield{
+  background-color: white !important;
+}
+
 
 body.collection-imaginarium .color-scheme-3{
 background-color: #69cadc !important;
@@ -4077,4 +4081,67 @@ color: #2993A7 !important;
 .compare-at-price {
   text-decoration: line-through;
   opacity: .7;
+}
+
+/* Contenedor tipo input (pill) */
+.header-searchfield{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+
+  width: 450px;
+  height: 44px;
+
+  padding: 0 18px 0 22px;
+  border-radius: 999px;
+
+  background: #fff;
+  border: 0;
+
+  cursor: text;
+
+  /* Tipografía */
+  font: inherit;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1;
+
+  color: var(--color-primary);
+}
+
+/* Texto "Buscar" (placeholder visual) */
+.header-searchfield__text{
+  color: var(--color-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Icono lupa a la derecha */
+.header-searchfield__icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width: 28px;
+  height: 28px;
+
+  color: var(--color-primary);
+  flex: 0 0 auto;
+}
+
+/* Si tu lupa es un SVG */
+.header-searchfield__icon svg{
+  width: 22px;
+  height: 22px;
+}
+
+/* Responsive: en móvil que sea casi full */
+@media (max-width: 768px){
+  .header-searchfield{
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+    font-size: 16px;
+  }
 }

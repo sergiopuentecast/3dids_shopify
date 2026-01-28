@@ -323,7 +323,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/667_Banner_Secundario-Home_440x440_cd2e6563-0340-4bd2-9e78-b47248c75efb.jpg",
-                "link": "shopify://pages/imaginarium",
+                "link": "shopify://collections/imaginarium",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -1063,7 +1063,8 @@
         "group_Xzc8pc"
       ],
       "custom_css": [
-        "h4 {color: red; margin-top: -35px;}"
+        "h4 {color: red; margin-top: -35px;}",
+        "@media only screen and (max-width: 600px) {h4 {margin-top: -59px; margin-left: 242px; }}"
       ],
       "name": "t:names.collections_carousel",
       "settings": {

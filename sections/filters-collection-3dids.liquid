@@ -75,6 +75,31 @@
       border: none;
     {% endif %}
   }
+  /* MOBILE: scroll lateral en vez de wrap */
+@media (max-width: 768px){
+  .cmf-{{ section.id }} .cmf-flex{
+    justify-content: flex-start; /* en vez de center */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+
+    /* opcional: que “encaje” al hacer scroll */
+    scroll-snap-type: x mandatory;
+  }
+
+  .cmf-{{ section.id }} .cmf-item{
+    flex: 0 0 auto;          /* que no se encojan */
+    scroll-snap-align: start; /* opcional */
+    white-space: nowrap;     /* que el texto no se parta */
+  }
+
+  /* opcional: ocultar scrollbar */
+  .cmf-{{ section.id }} .cmf-flex::-webkit-scrollbar{ display:none; }
+  .cmf-{{ section.id }} .cmf-flex{ scrollbar-width:none; }
+}
+
 </style>
 
 {% schema %}

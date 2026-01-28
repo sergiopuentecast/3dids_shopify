@@ -186,7 +186,8 @@
       },
       "custom_css": [
         ".text-block {color: #2993a7 !important;}",
-        ".price {color: #2993a7 !important;}"
+        ".price {color: #2993a7 !important;}",
+        "slideshow-arrows {display:none;}"
       ],
       "settings": {
         "layout_type": "grid",

@@ -357,6 +357,23 @@
       {{ navigation_bar }}
     </div>
   {% endif %}
+  <div class="mobile-searchbar" data-mobile-searchbar>
+  <button
+  on:click="#search-modal/showDialog"
+    type="button"
+    class="mobile-searchbar__field"
+    aria-label="Buscar"
+    aria-haspopup="dialog"
+    data-open-search
+  >
+    <span class="mobile-searchbar__text">Buscar</span>
+    <span class="mobile-searchbar__icon" aria-hidden="true">
+      {% comment %} usa tu icono svg de lupa aquí si ya lo tienes {% endcomment %}
+      🔍
+    </span>
+  </button>
+</div>
+
 </header-component>
 
 <script
@@ -365,6 +382,45 @@
 ></script>
 
 {% stylesheet %}
+/* Solo mobile */
+.mobile-searchbar{ display:none; }
+
+@media (max-width: 768px){
+  .mobile-searchbar{
+    display:block;
+    background: var(--color-primary);
+    padding: 10px 14px 12px;
+  }
+
+  .mobile-searchbar__field{
+    width: 100%;
+    height: 44px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+
+    padding: 0 18px 0 20px;
+    border-radius: 999px;
+    border: 0;
+    background: #fff;
+
+    cursor: text;
+
+    font: inherit;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-primary);
+  }
+
+  .mobile-searchbar__icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width: 28px;
+    height: 28px;
+  }
+}
+
   body {
     --header-height: 60px;
     --header-group-height: var(--header-height);

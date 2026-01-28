@@ -1,0 +1,377 @@
+{% liquid
+  assign list = blank
+
+  if section.settings.source_metafield != blank and section.settings.source_metafield.value != blank
+    assign list = section.settings.source_metafield.value
+  else
+    assign list = collection.metafields.custom.colecciones_relacionados.value
+  endif
+
+  assign title_align = section.settings.title_align
+  assign title_size = section.settings.title_size
+%}
+
+<div
+  class="section cmfi-{{ section.id }}"
+  style="
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  {% if section.settings.title != blank %}
+    <div class="cmfi-title cmfi-title--{{ title_align }} cmfi-title--{{ title_size }}">
+      {{ section.settings.title }}
+    </div>
+  {% endif %}
+
+  {% if list != blank %}
+    <div class="cmfi-flex">
+      {% for c in list %}
+        {%- liquid
+          assign img = c.featured_image
+          if c.image != blank
+            assign img = c.image
+          endif
+        -%}
+
+        <a class="cmfi-item" href="{{ c.url }}" aria-label="{{ c.title | escape }}">
+          <div class="cmfi-media cmfi-media--{{ section.settings.image_shape }}">
+            {% if img != blank %}
+              {{ img
+                | image_url: width: 800
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'cmfi-img',
+                  alt: c.title
+              }}
+            {% else %}
+              <div class="cmfi-placeholder">{{ c.title }}</div>
+            {% endif %}
+          </div>
+
+          {% if section.settings.show_name %}
+            <div class="cmfi-name">{{ c.title }}</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {%- content_for 'blocks' -%}
+</div>
+
+<style>
+  /* TITLE */
+  .cmfi-{{ section.id }} .cmfi-title { margin-bottom: 16px; }
+  .cmfi-{{ section.id }} .cmfi-title--left { text-align: left; }
+  .cmfi-{{ section.id }} .cmfi-title--center { text-align: center; }
+  .cmfi-{{ section.id }} .cmfi-title--right { text-align: right; }
+
+  .cmfi-{{ section.id }} .cmfi-title--s { font-size: 18px; }
+  .cmfi-{{ section.id }} .cmfi-title--m { font-size: 24px; }
+  .cmfi-{{ section.id }} .cmfi-title--l { font-size: 32px; }
+
+  /* FLEX LAYOUT */
+  .cmfi-{{ section.id }} .cmfi-flex{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap: {{ section.settings.gap }}px;
+  }
+
+  /* ITEM */
+  .cmfi-{{ section.id }} .cmfi-item{
+    text-decoration:none;
+    color: inherit;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    background: {{ section.settings.item_bg }};
+    border-radius: {{ section.settings.item_radius }}px;
+
+    padding:
+      {{ section.settings.item_padding_y }}px
+      {{ section.settings.item_padding_x }}px;
+
+    {% if section.settings.show_border %}
+      border: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+    {% else %}
+      border: none;
+    {% endif %}
+  }
+
+  /* MEDIA */
+  .cmfi-{{ section.id }} .cmfi-media{
+    width: {{ section.settings.image_size }}px;
+    aspect-ratio: {{ section.settings.image_ratio }};
+    overflow: hidden;
+    background: #fff;
+  }
+
+  /* Shape control */
+  .cmfi-{{ section.id }} .cmfi-media--round{
+    border-radius: 50%;
+  }
+  .cmfi-{{ section.id }} .cmfi-media--square{
+    border-radius: {{ section.settings.image_radius }}px;
+  }
+
+  .cmfi-{{ section.id }} .cmfi-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display:block;
+    transition: transform .25s ease;
+  }
+
+  .cmfi-{{ section.id }} .cmfi-item:hover .cmfi-img{
+    transform: scale(1.05);
+  }
+
+  .cmfi-{{ section.id }} .cmfi-name{
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    max-width: {{ section.settings.image_size }}px;
+  }
+
+  .cmfi-{{ section.id }} .cmfi-placeholder{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 10px;
+    font-size: 12px;
+    text-align:center;
+  }
+
+  /* MOBILE: scroll lateral */
+  @media (max-width: 768px){
+    .cmfi-{{ section.id }} .cmfi-flex{
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 6px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .cmfi-{{ section.id }} .cmfi-item{
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+    }
+
+    .cmfi-{{ section.id }} .cmfi-flex::-webkit-scrollbar{ display:none; }
+    .cmfi-{{ section.id }} .cmfi-flex{ scrollbar-width:none; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Filters images",
+  "class": "ui-test-custom-filters-images",
+  "blocks": [
+    { "type": "@theme" },
+    { "type": "@app" }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Título",
+      "default": "<p><strong>Colecciones relacionadas</strong></p>"
+    },
+    {
+      "type": "select",
+      "id": "title_align",
+      "label": "Alineación del título",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Tamaño del título",
+      "options": [
+        { "value": "s", "label": "Pequeño" },
+        { "value": "m", "label": "Medio" },
+        { "value": "l", "label": "Grande" }
+      ],
+      "default": "m"
+    },
+    {
+      "type": "text",
+      "id": "source_metafield",
+      "label": "Metafield (origen dinámico)",
+      "info": "Insertar origen dinámico → seleccionar metafield tipo List of collections"
+    },
+
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Separación entre items",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+
+    {
+      "type": "header",
+      "content": "Imagen"
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "Tamaño (px)",
+      "min": 40,
+      "max": 220,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Aspect ratio",
+      "options": [
+        { "value": "1 / 1", "label": "Cuadrado (1:1)" },
+        { "value": "4 / 3", "label": "4:3" },
+        { "value": "16 / 9", "label": "16:9" }
+      ],
+      "default": "1 / 1"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Radio imagen (solo cuadrada)",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "Forma de imagen",
+      "options": [
+        { "value": "square", "label": "Cuadrada" },
+        { "value": "round", "label": "Redonda" }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_name",
+      "label": "Mostrar nombre colección",
+      "default": true
+    },
+
+    {
+      "type": "header",
+      "content": "Item"
+    },
+    {
+      "type": "color",
+      "id": "item_bg",
+      "label": "Fondo",
+      "default": "#F1F4FA"
+    },
+    {
+      "type": "range",
+      "id": "item_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "item_padding_x",
+      "label": "Padding horizontal item",
+      "min": 4,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "item_padding_y",
+      "label": "Padding vertical item",
+      "min": 4,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Mostrar borde",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Grosor del borde",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Color del borde",
+      "default": "#000000"
+    },
+
+    {
+      "type": "header",
+      "content": "Padding sección"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding superior",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding inferior",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    { "name": "Filters images" }
+  ]
+}
+{% endschema %}
