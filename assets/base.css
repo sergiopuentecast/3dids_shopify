@@ -4041,31 +4041,31 @@ text-component {
   }
 }
 
-body.template-suffix-imaginarium {
+body.collection-imaginarium{
   --color-primary: #69cadc; /* azul claro */
   --color-accent:  #69cadc;
   --color-link:    #69cadc;
 }
 
 
-body.template-suffix-imaginarium .button,
-body.template-suffix-imaginarium button {
+body.collection-imaginarium .button,
+body.collection-imaginarium button {
   background-color: #69cadc;
   border-color: #69cadc;
 }
 
 
-body.template-suffix-imaginarium .color-scheme-3{
+body.collection-imaginarium .color-scheme-3{
 background-color: #69cadc !important;
 color: white !important;
 }
 
-body.template-suffix-imaginarium .color-scheme-4{
+body.collection-imaginarium .color-scheme-4{
 background-color: #CBEEF5 !important;
 color: #2993A7 !important;
 }
 
-body.template-suffix-imaginarium .slideshow-control{
+body.collection-imaginarium .slideshow-control{
 background-color: #CBEEF5 !important;
 color: #2993A7 !important;
 }
