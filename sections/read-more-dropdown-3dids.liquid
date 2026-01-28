@@ -1,0 +1,247 @@
+{% comment %}
+  Section: Read more / collapsible text with line clamp
+  + Width selector (page-width / full-width)
+  + Padding controls
+{% endcomment %}
+
+{%- liquid
+  assign collapsed_lines = section.settings.collapsed_lines | default: 2
+  assign width_mode = section.settings.section_width | default: 'page-width'
+-%}
+
+<section
+  class="read-more-section read-more-section--{{ width_mode }}"
+  data-read-more-section
+  style="
+    --collapsed-lines: {{ collapsed_lines }};
+    --rm-pad-top: {{ section.settings.padding_top }}px;
+    --rm-pad-bottom: {{ section.settings.padding_bottom }}px;
+    --rm-pad-left: {{ section.settings.padding_left }}px;
+    --rm-pad-right: {{ section.settings.padding_right }}px;
+  "
+>
+  <div class="read-more-section__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="read-more__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="read-more__wrap">
+      <div class="read-more__content" data-read-more-content>
+        {{ section.settings.content }}
+      </div>
+
+      <button
+        type="button"
+        class="read-more__toggle"
+        aria-expanded="false"
+        data-read-more-toggle
+      >
+        {{ section.settings.more_label | default: 'Leer más' }}
+      </button>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .read-more-section {
+    padding-top: var(--rm-pad-top);
+    padding-bottom: var(--rm-pad-bottom);
+    padding-left: var(--rm-pad-left);
+    padding-right: var(--rm-pad-right);
+  }
+
+  /* Ancho "Página" (centrado) */
+  .read-more-section--page-width .read-more-section__inner {
+    max-width: var(--page-width, 1200px);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  /* Ancho "Full" */
+  .read-more-section--full-width .read-more-section__inner {
+    width: 100%;
+    max-width: none;
+  }
+
+  .read-more__heading {
+    margin: 0 0 0.75rem 0;
+  }
+
+  .read-more__wrap {
+    position: relative;
+  }
+
+  /* Colapsado: mostrar solo N líneas */
+  .read-more__content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--collapsed-lines);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Degradado para sugerir que hay más */
+  .read-more__wrap:not(.is-expanded) .read-more__content::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2.25em;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+  }
+
+  /* Expandido: mostrar todo */
+  .read-more__wrap.is-expanded .read-more__content {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+
+  .read-more__toggle {
+    margin: 0.75rem auto 0 auto;
+    display: block;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font: inherit;
+    color: var(--color-primary);
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    const sections = document.querySelectorAll('[data-read-more-section]');
+    sections.forEach((section) => {
+      const wrap = section.querySelector('.read-more__wrap');
+      const btn = section.querySelector('[data-read-more-toggle]');
+      const content = section.querySelector('[data-read-more-content]');
+      if (!wrap || !btn || !content) return;
+
+      // Si no hay overflow, ocultar botón
+      requestAnimationFrame(() => {
+        const isOverflowing = content.scrollHeight > content.clientHeight + 2;
+        if (!isOverflowing) btn.style.display = 'none';
+      });
+
+      btn.addEventListener('click', () => {
+        const expanded = wrap.classList.toggle('is-expanded');
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        btn.textContent = expanded
+          ? "{{ section.settings.less_label | default: 'Leer menos' }}"
+          : "{{ section.settings.more_label | default: 'Leer más' }}";
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Texto con Leer más",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenido"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Título de ejemplo"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Texto",
+      "default": "<p>Escribe aquí tu texto…</p>"
+    },
+    {
+      "type": "range",
+      "id": "collapsed_lines",
+      "label": "Líneas visibles (colapsado)",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "text",
+      "id": "more_label",
+      "label": "Texto botón (cerrado)",
+      "default": "Leer más"
+    },
+    {
+      "type": "text",
+      "id": "less_label",
+      "label": "Texto botón (abierto)",
+      "default": "Leer menos"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Ancho de sección",
+      "options": [
+        { "value": "page-width", "label": "Ancho de página" },
+        { "value": "full-width", "label": "Full width" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding arriba",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding abajo",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "label": "Padding izquierda",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "label": "Padding derecha",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Texto con Leer más"
+    }
+  ]
+}
+{% endschema %}

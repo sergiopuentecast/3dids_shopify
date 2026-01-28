@@ -422,6 +422,9 @@
           ]
         }
       },
+      "custom_css": [
+        ".quantity-selector{height: auto; border-radius: 50px;}"
+      ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
